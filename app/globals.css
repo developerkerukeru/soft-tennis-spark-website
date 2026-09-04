@@ -500,13 +500,22 @@ a {
   color: #b9d0d6;
   line-height: 1.9;
 }
-.contact-card .contact-pending {
+.contact-card .contact-route {
+  width: fit-content;
+  display: block;
   margin: 24px 0 0;
   padding: 14px 18px;
   border: 1px solid rgba(92, 225, 230, 0.28);
   border-radius: 12px;
   color: var(--cyan-bright);
   font-weight: 800;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.contact-card .contact-route:hover,
+.contact-card .contact-route:focus-visible {
+  border-color: var(--cyan-bright);
+  background: rgba(92, 225, 230, 0.08);
 }
 .document-links {
   margin-top: 36px;

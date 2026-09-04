@@ -10,6 +10,8 @@ import {
 } from 'lucide-react';
 import { SiteFooter, SiteHeader } from '@/components/site-chrome';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 export default function Home() {
   return (
     <main>
@@ -40,7 +42,7 @@ export default function Home() {
         <div className="hero-visual">
           <div className="screen-frame">
             <Image
-              src="/gameplay.png"
+              src={`${basePath}/gameplay.png`}
               alt="SOFT TENNIS SPARKの3D試合画面"
               width={844}
               height={390}

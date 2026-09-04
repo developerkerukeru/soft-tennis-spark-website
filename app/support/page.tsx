@@ -73,10 +73,14 @@ export default function SupportPage() {
           <p className="section-number">CONTACT</p>
           <h2 id="contact-title">お問い合わせ</h2>
           <p>
-            サポート窓口はApp
-            Storeでの公開前に本ページへ掲載します。お問い合わせの際は、アプリのバージョン、iPhoneの機種、iOSのバージョン、問題が発生した画面と手順をお知らせください。
+            不具合、ご質問、ご要望は、以下のメールアドレスまでお問い合わせください。アプリのバージョン、iPhoneの機種、iOSのバージョン、問題が発生した画面と手順を添えていただくと、確認がスムーズです。
           </p>
-          <p className="contact-pending">現在、問い合わせ先を準備中です。</p>
+          <a
+            className="contact-route"
+            href="mailto:appdeveloper.kerukeru@gmail.com"
+          >
+            appdeveloper.kerukeru@gmail.com
+          </a>
         </section>
 
         <nav className="document-links" aria-label="関連文書">

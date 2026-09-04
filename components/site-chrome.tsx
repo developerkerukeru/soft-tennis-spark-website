@@ -1,11 +1,19 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 export function SiteHeader() {
   return (
     <header className="site-header">
       <Link className="brand" href="/" aria-label="SOFT TENNIS SPARK ホーム">
-        <Image src="/app-icon.png" alt="" width={44} height={44} priority />
+        <Image
+          src={`${basePath}/app-icon.png`}
+          alt=""
+          width={44}
+          height={44}
+          priority
+        />
         <span>
           <b>SOFT TENNIS</b>
           <strong>SPARK</strong>
@@ -30,7 +38,12 @@ export function SiteFooter() {
             href="/"
             aria-label="SOFT TENNIS SPARK ホーム"
           >
-            <Image src="/app-icon.png" alt="" width={38} height={38} />
+            <Image
+              src={`${basePath}/app-icon.png`}
+              alt=""
+              width={38}
+              height={38}
+            />
             <span>
               <b>SOFT TENNIS</b>
               <strong>SPARK</strong>
@@ -42,6 +55,7 @@ export function SiteFooter() {
           <Link href="/privacy">プライバシーポリシー</Link>
           <Link href="/terms">利用規約</Link>
           <Link href="/support">サポート</Link>
+          <a href="mailto:appdeveloper.kerukeru@gmail.com">お問い合わせ</a>
         </nav>
       </div>
       <p className="copyright">© 2026 SOFT TENNIS SPARK</p>
