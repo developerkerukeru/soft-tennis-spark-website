@@ -2,9 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    'https://soft-tennis-spark.fancy-heron-0866.chatgpt.site',
-  ),
+  metadataBase: new URL('https://soft-tennis-spark.kerukerukeru.chatgpt.site'),
   title: {
     default: 'SOFT TENNIS SPARK 公式サイト',
     template: '%s | SOFT TENNIS SPARK',
