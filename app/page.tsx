@@ -44,15 +44,12 @@ export default function Home() {
             <Image
               src={`${basePath}/gameplay.png`}
               alt="SOFT TENNIS SPARKの3D試合画面"
-              width={844}
+              width={814}
               height={390}
               priority
             />
           </div>
-          <div className="score-card" aria-hidden="true">
-            <span>RALLY</span>
-            <strong>GAME ON</strong>
-          </div>
+          <p className="screen-caption">開発中のゲーム画面です。表示は変更される場合があります。</p>
         </div>
       </section>
 
@@ -83,9 +80,9 @@ export default function Home() {
           いつでも手の中に。
         </h2>
         <p>
-          ストローク、ボレー、スマッシュ、2種類のサーブを、ひとつのフリック操作で打ち分けます。
+          フリックでドライブ、スライス、ロブを打ち分け、打点に合わせてボレーやスマッシュへ。
           練習場から大会、Game
-          Centerを利用した1対1通信対戦まで、自分のペースで上達できます。
+          Centerを利用したシングルス・4人ダブルスの通信対戦まで、自分のペースで上達できます。
         </p>
       </section>
 
@@ -119,7 +116,7 @@ export default function Home() {
             <p>ONLINE</p>
             <h3>Game Center対戦</h3>
             <span>
-              Game Centerを利用して、離れたプレイヤーとリアルタイムで1対1対戦。
+              誰かと、または友達と。2人のシングルス・4人のダブルスを楽しめます。ランダム対戦の勝利で、形式別ランキングにも挑戦。
             </span>
           </article>
         </div>
