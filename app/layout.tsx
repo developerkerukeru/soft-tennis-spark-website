@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   description:
     'iPhoneゲーム「SOFT TENNIS SPARK」の公式情報、プライバシーポリシー、利用規約、サポート。',
   icons: {
-    icon: `${basePath}/app-icon.png`,
-    apple: `${basePath}/app-icon.png`,
+    icon: `${basePath}/app-icon.png?v=20261014`,
+    apple: `${basePath}/app-icon.png?v=20261014`,
   },
 };
 

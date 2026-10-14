@@ -8,7 +8,7 @@ export function SiteHeader() {
     <header className="site-header">
       <Link className="brand" href="/" aria-label="SOFT TENNIS SPARK ホーム">
         <Image
-          src={`${basePath}/app-icon.png`}
+          src={`${basePath}/app-icon.png?v=20261014`}
           alt=""
           width={44}
           height={44}
@@ -39,7 +39,7 @@ export function SiteFooter() {
             aria-label="SOFT TENNIS SPARK ホーム"
           >
             <Image
-              src={`${basePath}/app-icon.png`}
+              src={`${basePath}/app-icon.png?v=20261014`}
               alt=""
               width={38}
               height={38}

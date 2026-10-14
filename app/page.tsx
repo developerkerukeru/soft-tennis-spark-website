@@ -42,7 +42,7 @@ export default function Home() {
         <div className="hero-visual">
           <div className="screen-frame">
             <Image
-              src={`${basePath}/gameplay.png`}
+              src={`${basePath}/gameplay.png?v=20261014`}
               alt="SOFT TENNIS SPARKの3D試合画面"
               width={814}
               height={390}
