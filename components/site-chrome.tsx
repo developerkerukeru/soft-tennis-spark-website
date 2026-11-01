@@ -6,9 +6,12 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 export function SiteHeader() {
   return (
     <header className="site-header">
+      <a className="skip-link" href="#main-content">
+        本文へ移動
+      </a>
       <Link className="brand" href="/" aria-label="SOFT TENNIS SPARK ホーム">
         <Image
-          src={`${basePath}/app-icon.png?v=20261014`}
+          src={`${basePath}/app-icon.png?v=20261101`}
           alt=""
           width={44}
           height={44}
@@ -20,9 +23,9 @@ export function SiteHeader() {
         </span>
       </Link>
       <nav aria-label="メインナビゲーション">
-        <Link href="/#about">ゲーム紹介</Link>
+        <Link href="/#game">ゲーム紹介</Link>
+        <Link href="/#modes">モード</Link>
         <Link href="/support">サポート</Link>
-        <Link href="/privacy">プライバシー</Link>
       </nav>
     </header>
   );
@@ -39,7 +42,7 @@ export function SiteFooter() {
             aria-label="SOFT TENNIS SPARK ホーム"
           >
             <Image
-              src={`${basePath}/app-icon.png?v=20261014`}
+              src={`${basePath}/app-icon.png?v=20261101`}
               alt=""
               width={38}
               height={38}
@@ -49,7 +52,7 @@ export function SiteFooter() {
               <strong>SPARK</strong>
             </span>
           </Link>
-          <p>iPhoneで楽しむ、スタイライズド3Dソフトテニスゲーム。</p>
+          <p>iPhoneで楽しむ、3Dソフトテニスゲーム。</p>
         </div>
         <nav aria-label="フッターナビゲーション">
           <Link href="/privacy">プライバシーポリシー</Link>

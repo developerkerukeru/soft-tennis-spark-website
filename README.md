@@ -33,3 +33,13 @@ npm run build:github
 - ロゴは既存のmarketing/instagram素材、ゲーム画像は2026-10-08の開発時実画面を使用。画面が変更される旨を併記。
 - 静的ビルド・TypeScript成功。390×844のブラウザーで4ページの導線と表示、トップ・プライバシー・規約の横あふれなしを確認。
 - App Store ConnectのURL入力、審査提出、アプリ本体のEAS Update／Buildはこのサイト更新に含まない。
+
+## 2026-11-01 redesign
+
+- Reuses the current landscape/portrait splash artwork from `art/branding/20261101`, current Expo app icon, and game character portraits. No new artwork was synthesized.
+- Screenshots: singles/doubles from `art/qa/smooth-rally-20261101`; training, tournament, portrait gameplay and home from `art/qa/portrait-refine-20261101`. All explicitly presented as development screenshots.
+- Responsive key art, four-image interactive gallery, training/tournament/online beta, rival lineup, portrait/landscape customization, pre-release product information.
+- Preserves existing support/privacy/terms URLs and public contact email.
+- Updates privacy disclosures for AdMob, RevenueCat, Game Center friend rewards and motion controls; separates ad removal and unlimited-heart purchase explanations. Does not update App Store Connect declarations.
+- Local production static export + TypeScript passed. Browser widths 320, 390, 768, 1440 checked for horizontal overflow. Gallery switching, navigation to all document pages, asset load and console error checks passed. Real iPhone not tested.
+- Read vendor references: Google Mobile Ads iOS data disclosure; RevenueCat Apple App Privacy. Formal release date remains unannounced.

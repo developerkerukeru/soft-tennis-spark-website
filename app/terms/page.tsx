@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <main>
+    <main id="main-content">
       <SiteHeader />
       <div className="document-shell">
         <LegalHero
@@ -18,7 +18,9 @@ export default function TermsPage() {
           description="SOFT TENNIS SPARKをご利用いただく際の条件を定めています。"
         />
         <article className="document-body">
-          <p className="updated">制定・最終更新：2026年9月4日</p>
+          <p className="updated">
+            制定：2026年9月4日 ／ 最終更新：2026年11月1日
+          </p>
 
           <section>
             <h2>1. 規約への同意</h2>
@@ -62,11 +64,11 @@ export default function TermsPage() {
           <section>
             <h2>5. App内課金</h2>
             <p>
-              本アプリの有料アイテムは、AppleのApp内課金を通じて提供されます。価格、決済、購入承認、返金および購入履歴の管理にはAppleの条件が適用されます。購入済みの対象アイテムは、アプリ内の「購入を復元」から同じApple
+              本アプリは基本プレイ無料で、広告および任意のApp内課金を含みます。有料アイテムはAppleのApp内課金を通じて提供されます。価格、決済、購入承認、返金および購入履歴の管理にはAppleの条件が適用されます。購入済みの対象アイテムは、アプリ内の「購入を復元」から同じApple
               Accountで復元できる場合があります。
             </p>
             <p>
-              ゲーム内で獲得するコインやアイテムは、本アプリ内でのみ利用でき、現金その他の財産的価値への交換、利用者間の譲渡、換金はできません。
+              「バナー・自動広告削除」と「ハート無制限」は別の商品です。広告削除ではハートの消費を免除せず、ハート無制限では広告を削除しません。任意視聴の報酬付き広告は広告削除の対象外です。「24時間ハート無制限」は購入後24時間の消費免除で、自動更新はありません。商品内容・期間・価格は購入画面でご確認ください。ゲーム内で獲得するコインやアイテムは、本アプリ内でのみ利用でき、現金その他の財産的価値への交換、利用者間の譲渡、換金はできません。
             </p>
           </section>
 

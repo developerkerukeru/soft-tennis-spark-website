@@ -6,7 +6,7 @@ const repositoryOwner = process.env.GITHUB_REPOSITORY?.split('/')[0] ?? '';
 const defaultSiteUrl =
   process.env.GITHUB_ACTIONS === 'true' && repositoryOwner
     ? `https://${repositoryOwner}.github.io${basePath}`
-    : 'https://soft-tennis-spark.kerukerukeru.chatgpt.site';
+    : 'https://developerkerukeru.github.io/soft-tennis-spark-website';
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? defaultSiteUrl).replace(
   /\/$/,
   '',
@@ -20,9 +20,26 @@ export const metadata: Metadata = {
   },
   description:
     'iPhoneゲーム「SOFT TENNIS SPARK」の公式情報、プライバシーポリシー、利用規約、サポート。',
+  openGraph: {
+    type: 'website',
+    locale: 'ja_JP',
+    siteName: 'SOFT TENNIS SPARK',
+    title: 'SOFT TENNIS SPARK | コートに、夢中になれ。',
+    description:
+      '指先で楽しむ3Dソフトテニス。練習、大会、2人・4人の通信対戦。iPhone向け・リリース準備中。',
+    images: [
+      {
+        url: siteUrl + '/images/keyvisual.webp',
+        width: 1280,
+        height: 592,
+        alt: 'SOFT TENNIS SPARK キービジュアル',
+      },
+    ],
+  },
+  twitter: { card: 'summary_large_image' },
   icons: {
-    icon: `${basePath}/app-icon.png?v=20261014`,
-    apple: `${basePath}/app-icon.png?v=20261014`,
+    icon: `${basePath}/app-icon.png?v=20261101`,
+    apple: `${basePath}/app-icon.png?v=20261101`,
   },
 };
 

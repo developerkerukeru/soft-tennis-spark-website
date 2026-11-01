@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <main>
+    <main id="main-content">
       <SiteHeader />
       <div className="document-shell">
         <LegalHero
@@ -24,12 +24,16 @@ export default function PrivacyPage() {
             <strong>基本方針</strong>
           </p>
           <p>
-            本アプリは、広告配信や行動追跡を行いません。ゲームの進行データは原則としてお使いの端末内に保存されます。
+            ゲームの進行データは原則として端末内に保存されます。通信対戦にGame
+            Center、購入の確認にAppleおよびRevenueCat、広告表示にGoogle
+            AdMob、更新配信にExpoを利用します。
           </p>
         </aside>
 
         <article className="document-body">
-          <p className="updated">制定：2026年9月4日 ／ 最終更新：2026年10月14日</p>
+          <p className="updated">
+            制定：2026年9月4日 ／ 最終更新：2026年11月1日
+          </p>
 
           <section>
             <h2>1. 収集・保存する情報</h2>
@@ -38,12 +42,16 @@ export default function PrivacyPage() {
               本アプリは、ゲームの提供と設定の維持のため、次の情報を端末内に保存します。これらは通常、運営者のサーバーへ送信されません。
             </p>
             <ul>
-              <li>アプリ内のユーザー名、性別・見た目・利き手、選手の育成状態</li>
+              <li>
+                アプリ内のユーザー名、性別・見た目・利き手、選手の育成状態
+              </li>
               <li>ゲームの進行状況、チュートリアルの完了状況</li>
               <li>操作・音量・表示などの設定</li>
               <li>ゲーム内コイン、装備、ショップおよび所持品の状態</li>
               <li>購入済みアイテムの利用状態を確認するための端末内情報</li>
-              <li>ランキングに送信する累計勝利ポイントと未送信の状態、直近の通信中断理由</li>
+              <li>
+                ランキングに送信する累計勝利ポイントと未送信の状態、直近の通信中断理由
+              </li>
             </ul>
             <p>
               本アプリを削除した場合、端末内のデータも削除され、復元できないことがあります。
@@ -60,14 +68,17 @@ export default function PrivacyPage() {
               シングルス・ダブルスの通信対戦では、アプリ内で入力したユーザー名、性別・見た目・利き手、装備・育成状態、プレイヤーの位置、打球・得点の状態など、試合に必要な情報が参加者の端末との間で送受信されます。ユーザー名は対戦参加者に表示されるため、本名や連絡先などの個人情報を含めないでください。本アプリの運営者は独自の対戦サーバーを運用しておらず、対戦履歴を独自サーバーへ保存しません。
             </p>
             <p>
-              ランキングには、ランダム対戦の累計勝利ポイントをシングルス・ダブルス別にAppleのGame Centerへ送信します。ランキング上の表示名はGame Centerの表示名を使用し、アプリ内の自由入力名や装備プロフィールはランキング用に公開しません。表示名、順位、ポイントなどはGame Centerの機能と公開範囲に従って他の利用者に表示されます。端末内データの削除だけで、Apple側のランキング記録が削除されるとは限りません。
+              ランキングには、ランダム対戦の累計勝利ポイントをシングルス・ダブルス別にAppleのGame
+              Centerへ送信します。ランキング上の表示名はGame
+              Centerの表示名を使用し、アプリ内の自由入力名や装備プロフィールはランキング用に公開しません。表示名、順位、ポイントなどはGame
+              Centerの機能と公開範囲に従って他の利用者に表示されます。端末内データの削除だけで、Apple側のランキング記録が削除されるとは限りません。
             </p>
           </section>
 
           <section>
             <h2>3. App内課金を利用する場合</h2>
             <p>
-              App内課金はAppleのStoreKitを使用します。購入処理、支払情報および取引の管理はAppleが行います。本アプリは、購入対象の商品ID、購入・復元の結果、利用権を反映するために必要な取引情報を受け取ることがあります。運営者がクレジットカード番号や銀行口座などの決済情報を取得・保存することはありません。
+              App内課金はAppleのStoreKitとRevenueCatを使用します。RevenueCatは、アプリ利用者を区別する識別子、商品ID、購入履歴・取引情報、利用権の状態、端末・アプリの技術情報などを、購入の確認・提供・復元のために処理します。購入処理、支払情報および取引の管理はAppleが行います。本アプリは、購入対象の商品ID、購入・復元の結果、利用権を反映するために必要な取引情報を受け取ることがあります。運営者がクレジットカード番号や銀行口座などの決済情報を取得・保存することはありません。
             </p>
           </section>
 
@@ -79,23 +90,31 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2>5. 広告、解析および端末権限</h2>
+            <h2>5. 広告と端末権限</h2>
             <p>
-              本アプリは、第三者広告、広告目的のトラッキング、利用行動を分析するための解析SDKを使用していません。また、位置情報、カメラ、マイク、連絡先、写真へのアクセスを要求しません。
+              本アプリはGoogle
+              AdMobを使用し、バナー広告、自動表示の動画広告、利用者が選択して視聴する報酬付き広告を提供します。現在の実装では非パーソナライズ広告をリクエストしますが、情報の収集が一切行われないという意味ではありません。広告SDKはIPアドレス（おおよその位置の推定を含む）、端末やアプリの識別情報、広告の表示・操作情報、診断情報などを、広告配信・効果測定・不正防止等のために処理する場合があります。地域や同意状態に応じて同意画面を表示し、広告のプライバシー設定から選択を見直せます。
             </p>
           </section>
 
           <section>
+            <h2>端末の動きとフレンド情報</h2>
+            <p>
+              FPS視点では、端末の動きをカメラ操作に使用します。また、友達との初回対戦報酬の確認にGame
+              Centerのフレンド情報を利用します。フレンド情報へのアクセスを許可しなくても対戦できます。報酬の重複を防ぐため、本人と相手の識別子をハッシュ化した受取履歴を端末内に保存し、生の識別子やフレンドのプロフィールは永続保存しません。
+            </p>
+          </section>
+          <section>
             <h2>6. 利用目的</h2>
             <p>
-              本ポリシーに記載する情報は、ゲームの進行と設定の保存、通信対戦とランキング、購入内容の提供・復元、アプリおよび本サイトの配信・更新、不具合対応とお問い合わせへの返信のために利用します。
+              本ポリシーに記載する情報は、ゲームの進行と設定の保存、通信対戦とランキング、購入内容の提供・復元、広告配信と効果測定・不正防止、アプリおよび本サイトの配信・更新、不具合対応とお問い合わせへの返信のために利用します。
             </p>
           </section>
 
           <section>
             <h2>7. 保存期間と削除</h2>
             <p>
-              端末内のゲームデータは、利用者が本アプリを削除するか、該当データを初期化するまで保存されます。AppleおよびExpoが処理する情報の保存期間は、各サービスの規定に従います。Game
+              端末内のゲームデータは、利用者が本アプリを削除するか、該当データを初期化するまで保存されます。Apple、Google、RevenueCatおよびExpoが処理する情報の保存期間は、各サービスの規定に従います。Game
               Centerの利用停止やApple
               Accountに関する管理は、iOSの設定およびAppleの窓口から行えます。
             </p>
@@ -120,11 +139,33 @@ export default function PrivacyPage() {
           <section>
             <h2>10. 外部サービスのポリシー</h2>
             <p>
-              Apple、Expoおよび本サイトの配信に利用するGitHubによる情報の取扱いについては、各社の最新のポリシーをご確認ください。
+              Apple、Google、RevenueCat、Expoおよび本サイトの配信に利用するGitHubによる情報の取扱いについては、各社の最新のポリシーをご確認ください。
             </p>
             <ul className="link-list">
               <li>
-                <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noreferrer">
+                <a
+                  href="https://policies.google.com/privacy?hl=ja"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Googleプライバシーポリシー
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.revenuecat.com/privacy/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  RevenueCat Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   GitHub General Privacy Statement
                 </a>
               </li>
@@ -178,7 +219,8 @@ export default function PrivacyPage() {
           <section>
             <h2>13. 本サイトについて</h2>
             <p>
-              本サイトはGitHub Pagesで公開しています。アクセス時には、IPアドレスなどの技術情報がGitHubによりサービス提供・安全性確保等のために処理される場合があります。本サイトには独自の広告やアクセス解析ツールを設置していません。
+              本サイトはGitHub
+              Pagesで公開しています。アクセス時には、IPアドレスなどの技術情報がGitHubによりサービス提供・安全性確保等のために処理される場合があります。本サイトには独自の広告やアクセス解析ツールを設置していません。
             </p>
           </section>
         </article>
