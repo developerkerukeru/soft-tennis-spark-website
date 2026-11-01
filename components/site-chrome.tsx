@@ -52,7 +52,7 @@ export function SiteFooter() {
               <strong>SPARK</strong>
             </span>
           </Link>
-          <p>iPhoneで楽しむ、3Dソフトテニスゲーム。</p>
+          <p>iPhone向け3Dソフトテニスゲーム</p>
         </div>
         <nav aria-label="フッターナビゲーション">
           <Link href="/privacy">プライバシーポリシー</Link>

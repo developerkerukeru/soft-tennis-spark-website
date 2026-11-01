@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'ja_JP',
     siteName: 'SOFT TENNIS SPARK',
-    title: 'SOFT TENNIS SPARK | コートに、夢中になれ。',
+    title: 'SOFT TENNIS SPARK 公式サイト',
     description:
-      '指先で楽しむ3Dソフトテニス。練習、大会、2人・4人の通信対戦。iPhone向け・リリース準備中。',
+      'iPhone向け3Dソフトテニスゲーム。練習・大会・通信対戦の紹介と配信情報。現在リリース準備中です。',
     images: [
       {
         url: siteUrl + '/images/keyvisual.webp',

@@ -43,3 +43,14 @@ npm run build:github
 - Updates privacy disclosures for AdMob, RevenueCat, Game Center friend rewards and motion controls; separates ad removal and unlimited-heart purchase explanations. Does not update App Store Connect declarations.
 - Local production static export + TypeScript passed. Browser widths 320, 390, 768, 1440 checked for horizontal overflow. Gallery switching, navigation to all document pages, asset load and console error checks passed. Real iPhone not tested.
 - Read vendor references: Google Mobile Ads iOS data disclosure; RevenueCat Apple App Privacy. Formal release date remains unannounced.
+
+## 2026-11-01 日本語・検索情報の見直し
+
+- 見出しと紹介文を具体的な操作・モード・育成・設定の説明へ改稿。抽象的な決め台詞を削除し、ゲーム画面の説明とサポートFAQも自然な表現へ統一。
+- 正式名称・日本語名・iPhone向け・配信準備中を本文と検索用説明文に明記。配信予定と基本プレイ無料についてのFAQを追加。
+- 4ページに固有のtitle、description、canonical、OG/Twitter情報。既存キービジュアルから1280×592のJPEG共有画像を生成。
+- 本文と一致するVideoGame JSON-LDと4 URLのsitemap.xmlを追加。架空の発売日、評価、レビュー、販売情報は追加しない。
+- origin直下のrobots.txtは確認時404（プロジェクト配下のrobots.txtではクロール制御できないため追加なし）。Google Search Consoleへの登録・サイトマップ送信・インデックス登録は未実施。検索掲載やAI回答での引用は保証できない。
+- Google Search CentralのAI features guidance / OpenAI crawler documentationを参照。特別なAI用ファイルを前提とせず、静的HTMLの本文・見出し・意味の一致を重視。
+- 静的ビルド・TypeScript成功。出力HTMLの4ページmetadata、H1、ローカルリンク/画像、JSON-LD parseを検証。ブラウザー320/390/768/1440幅で確認し、小画面の装飾文字のはみ出しを修正。サポート・規約・プライバシーの導線、ギャラリー4種類の切替、console error 0を確認。
+- 検証用の記録はgit管理外のwork/seo-verification.json。サイト更新のみ。

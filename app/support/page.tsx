@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import {
   AlertCircle,
@@ -9,13 +9,23 @@ import {
 } from 'lucide-react';
 import { LegalHero, SiteFooter, SiteHeader } from '@/components/site-chrome';
 
-export const metadata: Metadata = {
-  title: 'サポート',
-  description:
-    'SOFT TENNIS SPARKの遊び方、通信対戦、購入復元、トラブル解決のご案内。',
-};
+export const metadata = pageMetadata(
+  'support',
+  '遊び方・よくある質問 | SOFT TENNIS SPARK',
+  'ソフトテニススパークの操作方法、縦画面への切り替え、Game Center通信対戦、広告削除・ハート無制限、購入の復元とお問い合わせ。',
+);
 
 const faqs = [
+  {
+    icon: Gamepad2,
+    title: 'いつ、どの端末で遊べますか？',
+    body: '現在、iPhone向けにリリースを準備しています。配信日は未定です。決まり次第、公式サイトでお知らせします。',
+  },
+  {
+    icon: ShoppingBag,
+    title: '無料で遊べますか？',
+    body: '基本プレイ無料での配信を予定しています。アプリには広告と、希望する方が購入できる有料アイテムが含まれます。',
+  },
   {
     icon: Gamepad2,
     title: '縦画面で遊びたい',
@@ -24,12 +34,12 @@ const faqs = [
   {
     icon: ShoppingBag,
     title: '広告削除とハート無制限の違いは？',
-    body: '「バナー・自動広告削除」はバナーと自動動画広告を削除する商品です。ハートは通常どおり消費します。「ハート無制限」はハートの消費を免除する別商品で、広告は削除しません。任意で視聴するコイン2倍広告は残ります。',
+    body: '「バナー・自動広告削除」を購入すると、バナーと自動動画広告が表示されなくなります。ハートは通常どおり消費します。「ハート無制限」は、ハートを消費せずに遊べる別の商品です。広告は削除されません。どちらを購入した場合も、コインを2倍にする任意視聴の広告は利用できます。',
   },
   {
     icon: ShoppingBag,
     title: '24時間ハート無制限について',
-    body: '購入後24時間、ハートの消費を免除します。自動更新のサブスクリプションではありません。広告削除や自動のコイン増額は含まれません。期限なしのハート無制限をお持ちの場合、24時間商品は購入できません。価格と利用条件はアプリ内の購入画面をご確認ください。',
+    body: '購入してから24時間、ハートを消費せずに遊べます。自動更新はなく、広告の削除や獲得コインの増額は含まれません。期限なしのハート無制限をお持ちの場合、この商品は購入できません。価格と利用条件はアプリ内の購入画面をご確認ください。',
   },
   {
     icon: Gamepad2,
@@ -59,7 +69,7 @@ const faqs = [
   {
     icon: RefreshCw,
     title: 'アップデート後に動作がおかしい',
-    body: 'アプリを完全に終了してから起動し直し、安定した通信環境で更新を確認してください。App Storeに新しいバージョンがある場合は、先にアップデートしてください。改善しない場合はiPhoneを再起動します。',
+    body: 'アプリを完全に終了してから起動し直し、安定した通信環境で更新を確認してください。App Storeに新しいバージョンがある場合は、先にアップデートしてください。改善しない場合は、iPhoneの再起動をお試しください。',
   },
 ];
 
@@ -71,7 +81,7 @@ export default function SupportPage() {
         <LegalHero
           eyebrow="PLAYER SUPPORT"
           title="サポート"
-          description="遊び方や通信対戦、購入に関するよくあるご質問をご案内します。"
+          description="配信予定、遊び方、通信対戦、購入についてのよくある質問をまとめています。"
         />
 
         <section className="faq-grid" aria-label="よくあるご質問">

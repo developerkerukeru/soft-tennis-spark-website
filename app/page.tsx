@@ -1,12 +1,48 @@
 import Link from 'next/link';
+import { pageMetadata, siteUrl } from '@/lib/seo';
 import { ArrowDown, ArrowRight, ChevronRight } from 'lucide-react';
 import { SiteFooter, SiteHeader } from '@/components/site-chrome';
 import { GameGallery } from '@/components/game-gallery';
+
+export const metadata = pageMetadata(
+  '',
+  'SOFT TENNIS SPARK（ソフトテニススパーク）公式サイト',
+  'SOFT TENNIS SPARKはiPhone向けの3Dソフトテニスゲーム。フリック操作でショットを打ち分け、練習・大会・2人のシングルス・4人のダブルスを楽しめます。基本プレイ無料予定。現在リリース準備中です。',
+);
 const base = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 export default function Home() {
   return (
     <main id="main-content">
       <SiteHeader />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'VideoGame',
+            '@id': siteUrl + '/#game',
+            name: 'SOFT TENNIS SPARK',
+            alternateName: 'ソフトテニススパーク',
+            url: siteUrl + '/',
+            description:
+              'iPhone向けの3Dソフトテニスゲーム。練習、大会、Game Centerによる2人・4人の通信対戦に対応。現在リリース準備中。',
+            inLanguage: 'ja',
+            gamePlatform: 'iOS',
+            operatingSystem: 'iOS',
+            genre: ['スポーツ', 'ソフトテニス'],
+            image: siteUrl + '/images/keyvisual.webp',
+            playMode: [
+              'https://schema.org/SinglePlayer',
+              'https://schema.org/MultiPlayer',
+            ],
+            numberOfPlayers: {
+              '@type': 'QuantitativeValue',
+              minValue: 1,
+              maxValue: 4,
+            },
+          }).replace(/</g, '\u003c'),
+        }}
+      />
       <section
         className="keyvisual"
         aria-label="SOFT TENNIS SPARK キービジュアル"
@@ -28,21 +64,21 @@ export default function Home() {
       </section>
       <section className="hero-intro">
         <div>
-          <p className="eyebrow">その一打に、きみらしさを。</p>
+          <p className="eyebrow">iPhone向けソフトテニスゲーム</p>
           <h1>
-            コートに、<em>夢中になれ。</em>
+            SOFT TENNIS <em>SPARK</em>
           </h1>
           <p className="intro-description">
-            狙って、打ち分けて、勝ち上がる。
+            ソフトテニススパークは、フリック操作でショットを打ち分ける3Dソフトテニスゲームです。
             <br className="mobile-break" />
-            指先で楽しむ3Dソフトテニス。
+            練習や大会のほか、2人・4人での通信対戦を楽しめます。
           </p>
         </div>
         <div className="release-status">
           <span className="status-dot" /> iPhone向け・リリース準備中
-          <small>基本プレイ無料 / 広告・App内課金あり</small>
+          <small>基本プレイ無料予定 / 広告・App内課金あり</small>
           <a href="#game" className="button button-primary">
-            ゲームを知る <ArrowDown size={17} />
+            ゲーム紹介を見る <ArrowDown size={17} />
           </a>
         </div>
       </section>
@@ -62,22 +98,22 @@ export default function Home() {
         </div>
         <div className="intro-grid">
           <h2>
-            読む。走る。
+            フリック操作で
             <br />
-            一打で、変える。
+            ショットを打ち分ける
           </h2>
           <div>
             <p>
-              相手のいない場所へ、鋭いドライブ。
+              フリックの方向でドライブ、スライス、ロブを打ち分けられます。
               <br />
-              ネット際へ詰めて、決めるボレー。
+              ボレーやスマッシュも使って、ラリーの中で得点を狙いましょう。
               <br />
-              頭上を越えるロブで、ラリーの流れを変える。
+              相手の動きを見ながらコースを狙い、打つタイミングを合わせる駆け引きを楽しめます。
             </p>
             <p className="muted">
-              移動と打点、フリックの速さがプレーをつくる。
+              移動スティックとショットボタンで操作します。
               <br />
-              ソフトテニスの駆け引きを、立体的なコートで楽しもう。
+              初めて遊ぶ方は、チュートリアルで基本操作から練習できます。
             </p>
           </div>
         </div>
@@ -89,27 +125,19 @@ export default function Home() {
             <span>02</span> GAME MODES
           </div>
           <div className="section-title">
-            <h2>
-              きみのペースで、
-              <br />
-              きみの挑戦を。
-            </h2>
+            <h2>練習・大会・通信対戦</h2>
             <p>
-              一打を磨く日も、勝負に挑む日も。
+              ショットの練習、CPUとの大会、友達との対戦に対応しています。
               <br />
-              今日の気分に合ったコートへ。
+              遊び方に合わせてモードを選べます。
             </p>
           </div>
           <div className="mode-list">
             <article>
               <span className="mode-index">01 / TRAINING</span>
-              <h3>
-                ひとつずつ、
-                <br />
-                うまくなる。
-              </h3>
+              <h3>練習場</h3>
               <p>
-                サーブ・レシーブ・ストローク・ボレー・スマッシュ・ラリー。6つの練習で、苦手な一打を得意な一打へ。球種やコートを選び、自分のペースで繰り返せます。
+                サーブ・レシーブ・ストローク・ボレー・スマッシュ・ラリーの6種類から選べます。球種やコートなどの条件を設定して、練習したいショットに取り組めます。
               </p>
               <div className="mode-tags">
                 <span>6つの練習</span>
@@ -118,13 +146,9 @@ export default function Home() {
             </article>
             <article>
               <span className="mode-index">02 / TOURNAMENT</span>
-              <h3>
-                目指すは、
-                <br />
-                その先の頂点。
-              </h3>
+              <h3>大会</h3>
               <p>
-                地区大会から、さらに大きな舞台へ。異なるプレースタイルのライバルに挑戦。シングルスとダブルスで勝利を重ね、自分の選手を育てよう。
+                地区大会から世界大会まで、各地の大会で優勝を目指します。シングルスとダブルスで個性豊かなCPU選手と対戦し、自分の選手を育てていきます。
               </p>
               <div className="mode-tags">
                 <span>CPU対戦</span>
@@ -135,14 +159,10 @@ export default function Home() {
               <span className="mode-index">
                 03 / ONLINE <b>β版</b>
               </span>
-              <h3>
-                ひとりの熱中を、
-                <br />
-                みんなの熱戦に。
-              </h3>
+              <h3>通信対戦</h3>
               <p>
                 Game
-                Centerで誰かとマッチング、または友達を招待。2人のシングルス、4人のダブルスで対戦できます。ランダム対戦の勝利でランキングにも挑戦。
+                Centerを使って対戦相手を探したり、友達を招待したりできます。シングルスは2人、ダブルスは4人で遊べます。ランダム対戦での勝利数を競うランキングもあります。
               </p>
               <div className="mode-tags">
                 <span>2人 / 4人</span>
@@ -161,15 +181,11 @@ export default function Home() {
           <span>03</span> THE RIVALS
         </div>
         <div className="section-title">
-          <h2 id="rivals-title">
-            個性がぶつかる、
-            <br />
-            ライバルたち。
-          </h2>
+          <h2 id="rivals-title">登場キャラクター</h2>
           <p>
-            次のコートで待つのは、どんな相手？
+            大会では、さまざまな選手が対戦相手として登場します。
             <br />
-            勝ち進むほどに、新しい出会いがある。
+            見た目だけでなく、プレースタイルの違いにも注目です。
           </p>
         </div>
         <div className="rival-lineup">
@@ -202,24 +218,26 @@ export default function Home() {
             <span>04</span> YOUR STYLE
           </div>
           <h2>
-            プレーも、視点も。
+            選手の育成と
             <br />
-            <em>自分らしく。</em>
+            <em>プレイ設定</em>
           </h2>
           <p>
-            ラケットを選び、キャラクターを着せ替え。
+            選手の能力を育てたり、ラケットや着せ替えを選んだりできます。
             <br />
-            育成した選手で、自分のテニスを見つけよう。
+            視点や操作ボタンも、遊びやすい設定に調整できます。
           </p>
           <dl>
             <div>
               <dt>3つの視点</dt>
-              <dd>固定・TPS・FPS。コートの見え方を、自分好みに。</dd>
+              <dd>
+                コートを見渡す固定視点、選手を後ろから見るTPS視点、選手の目線で見るFPS視点を選べます。
+              </dd>
             </div>
             <div>
-              <dt>縦でも、横でも</dt>
+              <dt>縦画面・横画面に対応</dt>
               <dd>
-                広く見渡す横画面と、持ちやすい縦画面。設定で縦画面対応を切り替えられます。
+                初期設定は横画面です。設定で縦画面対応を有効にすると、端末の向きに合わせて切り替わります。
               </dd>
             </div>
             <div>
@@ -232,7 +250,7 @@ export default function Home() {
         </div>
         <div className="portrait-showcase">
           <span className="orbit-word" aria-hidden="true">
-            PLAY YOUR WAY.
+            SCREEN MODES
           </span>
           <figure>
             <img
@@ -259,12 +277,8 @@ export default function Home() {
       <section className="start-section" id="information">
         <div className="section-wrap start-inner">
           <div>
-            <p className="eyebrow">NEXT MATCH, YOUR SPARK.</p>
-            <h2>
-              次の一打が、
-              <br />
-              待っている。
-            </h2>
+            <p className="eyebrow">RELEASE INFORMATION</p>
+            <h2>配信について</h2>
             <p>
               SOFT TENNIS SPARK
               <br />
@@ -293,7 +307,7 @@ export default function Home() {
               <div>
                 <dt>料金</dt>
                 <dd>
-                  基本プレイ無料
+                  基本プレイ無料予定
                   <br />
                   <small>広告・App内課金あり</small>
                 </dd>

@@ -1,11 +1,12 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import { LegalHero, SiteFooter, SiteHeader } from '@/components/site-chrome';
 
-export const metadata: Metadata = {
-  title: '利用規約',
-  description: 'SOFT TENNIS SPARKの利用条件について説明します。',
-};
+export const metadata = pageMetadata(
+  'terms',
+  '利用規約 | SOFT TENNIS SPARK',
+  'ソフトテニススパークの利用条件。通信対戦、App内課金、広告削除とハート無制限、保存データについて。',
+);
 
 export default function TermsPage() {
   return (

@@ -772,6 +772,10 @@ summary:focus-visible {
   margin: 0 0 12px;
   color: #86edf1;
 }
+.hero-intro > div:first-child {
+  min-width: 0;
+  max-width: 760px;
+}
 .hero-intro h1 {
   font-size: clamp(28px, 3.5vw, 49px);
   letter-spacing: -0.055em;
@@ -789,9 +793,10 @@ summary:focus-visible {
   font-size: 14px;
   line-height: 1.9;
   margin: 14px 0 0;
+  text-wrap: pretty;
 }
 .mobile-break {
-  display: none;
+  display: block;
 }
 .release-status {
   font-size: 14px;
@@ -891,7 +896,7 @@ h2 {
 .section-title h2,
 .style-copy h2,
 .start-inner h2 {
-  font-size: clamp(30px, 4.5vw, 58px);
+  font-size: clamp(30px, 3.7vw, 48px);
   letter-spacing: -0.045em;
   line-height: 1.5;
   margin: 0;
@@ -1358,11 +1363,11 @@ h2 {
     font-size: 11px;
   }
   .hero-intro h1 {
-    font-size: clamp(25px, 7vw, 38px);
-    white-space: nowrap;
+    font-size: clamp(23px, 6.5vw, 35px);
+    white-space: normal;
   }
   .intro-description {
-    font-size: 12px;
+    font-size: 14px;
   }
   .mobile-break {
     display: block;
@@ -1496,7 +1501,7 @@ h2 {
     border-radius: 16px;
   }
   .orbit-word {
-    font-size: 33px;
+    font-size: 26px;
   }
   .start-inner {
     grid-template-columns: 1fr;

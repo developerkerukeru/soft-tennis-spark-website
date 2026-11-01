@@ -1,12 +1,12 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import { LegalHero, SiteFooter, SiteHeader } from '@/components/site-chrome';
 
-export const metadata: Metadata = {
-  title: 'プライバシーポリシー',
-  description:
-    'SOFT TENNIS SPARKにおける利用者情報の取扱いについて説明します。',
-};
+export const metadata = pageMetadata(
+  'privacy',
+  'プライバシーポリシー | SOFT TENNIS SPARK',
+  'ソフトテニススパークにおけるゲームデータ、Game Center、広告、App内課金、外部サービスの情報の取り扱いについて。',
+);
 
 export default function PrivacyPage() {
   return (
