@@ -1601,13 +1601,13 @@ h2 {
   background: linear-gradient(0deg, #17405266, transparent 75%);
   border-bottom: 2px solid #4a9da2;
 }
-.rival-lineup figure:nth-child(2) {
+.rival-lineup figure:nth-child(4n + 2) {
   border-color: #e7814f;
 }
-.rival-lineup figure:nth-child(3) {
+.rival-lineup figure:nth-child(4n + 3) {
   border-color: #a371d5;
 }
-.rival-lineup figure:nth-child(4) {
+.rival-lineup figure:nth-child(4n) {
   border-color: #e5c568;
 }
 .rival-lineup img {
@@ -1622,14 +1622,17 @@ h2 {
 .rival-lineup figcaption {
   font-size: 19px;
   font-weight: 800;
-  padding: 0 0 22px;
+  padding: 12px 8px 22px;
 }
 .rival-lineup small {
   display: block;
   color: #7ce6e7;
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+  margin-top: 6px;
+  text-wrap: pretty;
 }
 .rivals > .fine-print {
   color: #9db6c5;

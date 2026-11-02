@@ -190,10 +190,14 @@ export default function Home() {
         </div>
         <div className="rival-lineup">
           {[
-            { id: 'haru', name: 'ハル' },
-            { id: 'ren', name: 'レン' },
-            { id: 'nova', name: 'ノヴァ' },
-            { id: 'zenith', name: 'ゼニス' },
+            { id: 'haru', name: 'ハル', title: 'はじめての挑戦者' },
+            { id: 'ren', name: 'レン', title: '県大会の強打者' },
+            { id: 'shion', name: 'マッハ', title: '高速ストローカー' },
+            { id: 'reina', name: 'レイナ', title: '全国の女王' },
+            { id: 'leo', name: 'クロフォード', title: 'フィジカルエリート' },
+            { id: 'luna', name: 'ルナ', title: '幻影のレフティ' },
+            { id: 'jin', name: 'レオ', title: '世界王者' },
+            { id: 'cosmo', name: 'アマテニス', title: 'ソフトテニスの女神' },
           ].map((c) => (
             <figure key={c.id}>
               <img
@@ -204,8 +208,8 @@ export default function Home() {
                 loading="lazy"
               />
               <figcaption>
-                <small>{c.id.toUpperCase()}</small>
                 {c.name}
+                <small>{c.title}</small>
               </figcaption>
             </figure>
           ))}
