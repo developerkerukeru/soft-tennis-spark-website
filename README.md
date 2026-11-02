@@ -54,3 +54,9 @@ npm run build:github
 - Google Search CentralのAI features guidance / OpenAI crawler documentationを参照。特別なAI用ファイルを前提とせず、静的HTMLの本文・見出し・意味の一致を重視。
 - 静的ビルド・TypeScript成功。出力HTMLの4ページmetadata、H1、ローカルリンク/画像、JSON-LD parseを検証。ブラウザー320/390/768/1440幅で確認し、小画面の装飾文字のはみ出しを修正。サポート・規約・プライバシーの導線、ギャラリー4種類の切替、console error 0を確認。
 - 検証用の記録はgit管理外のwork/seo-verification.json。サイト更新のみ。
+
+## 2026-11-02 ページ単位のヘッダーナビゲーション
+
+- ヘッダーをホーム・サポート・プライバシーポリシー・利用規約の4ページへのリンクに変更。
+- 各ページの現在位置をaria-currentと下線・色で表示。モバイルはロゴ下に2列、全リンク44px高。
+- 静的ビルド・TypeScript成功。320/390/768/1440幅で全リンク表示と横あふれなし、4ページ遷移と現在位置の一致、console error 0を確認。PC・スマートフォンの画像確認済み。

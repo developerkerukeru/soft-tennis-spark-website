@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
-export function SiteHeader() {
+export function SiteHeader({ currentPage = '/' }: { currentPage?: string }) {
   return (
     <header className="site-header">
       <a className="skip-link" href="#main-content">
@@ -23,9 +23,20 @@ export function SiteHeader() {
         </span>
       </Link>
       <nav aria-label="メインナビゲーション">
-        <Link href="/#game">ゲーム紹介</Link>
-        <Link href="/#modes">モード</Link>
-        <Link href="/support">サポート</Link>
+        {[
+          { href: '/', label: 'ホーム' },
+          { href: '/support', label: 'サポート' },
+          { href: '/privacy', label: 'プライバシーポリシー' },
+          { href: '/terms', label: '利用規約' },
+        ].map(({ href, label }) => (
+          <Link
+            key={href}
+            href={href}
+            aria-current={currentPage === href ? 'page' : undefined}
+          >
+            {label}
+          </Link>
+        ))}
       </nav>
     </header>
   );

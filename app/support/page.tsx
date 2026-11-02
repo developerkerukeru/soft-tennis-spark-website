@@ -76,7 +76,7 @@ const faqs = [
 export default function SupportPage() {
   return (
     <main id="main-content">
-      <SiteHeader />
+      <SiteHeader currentPage="/support" />
       <div className="document-shell support-shell">
         <LegalHero
           eyebrow="PLAYER SUPPORT"

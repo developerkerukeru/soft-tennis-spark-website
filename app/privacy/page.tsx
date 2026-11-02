@@ -11,7 +11,7 @@ export const metadata = pageMetadata(
 export default function PrivacyPage() {
   return (
     <main id="main-content">
-      <SiteHeader />
+      <SiteHeader currentPage="/privacy" />
       <div className="document-shell">
         <LegalHero
           eyebrow="PRIVACY POLICY"

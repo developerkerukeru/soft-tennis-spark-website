@@ -11,7 +11,7 @@ export const metadata = pageMetadata(
 export default function TermsPage() {
   return (
     <main id="main-content">
-      <SiteHeader />
+      <SiteHeader currentPage="/terms" />
       <div className="document-shell">
         <LegalHero
           eyebrow="TERMS OF USE"
