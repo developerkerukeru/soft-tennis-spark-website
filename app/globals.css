@@ -802,8 +802,8 @@ summary:focus-visible {
   display: block;
 }
 .release-status {
-  font-size: 14px;
-  white-space: nowrap;
+  font-size: 16px;
+  white-space: normal;
   text-align: center;
 }
 .status-dot {
@@ -816,7 +816,7 @@ summary:focus-visible {
 }
 .release-status small {
   display: block;
-  font-size: 11px;
+  font-size: 14px;
   color: #a9bccb;
   margin: 10px 0 18px;
 }
@@ -861,8 +861,9 @@ summary:focus-visible {
 .news-strip a {
   display: grid;
   place-items: center;
-  width: 44px;
+  min-width: 64px;
   height: 44px;
+  color: var(--cyan);
 }
 .section-wrap {
   width: min(1180px, calc(100% - 64px));
@@ -1658,4 +1659,39 @@ h2 {
   .mode-list h3 br {
     display: block;
   }
+}
+
+/* Release information: shared with the App Store listing. */
+.intro-more {
+  display: block;
+  padding: 14px 0 0;
+  min-height: 44px;
+  font-size: 14px;
+  color: #b9d2d9;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.release-updates { padding-block: 72px; }
+.release-updates .eyebrow { color: var(--cyan); margin-bottom: 12px; }
+.release-updates h2 { font-size: clamp(25px, 3vw, 38px); }
+.update-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 32px; }
+.update-grid article { border: 1px solid var(--line); background: #102439; padding: 26px; border-radius: 8px; }
+.update-grid h3 { margin: 0 0 12px; font-size: 18px; color: #ecfbff; }
+.update-grid p { margin: 0; font-size: 16px; line-height: 1.9; color: #b9d2d9; }
+.release-updates .fine-print a { text-decoration: underline; text-underline-offset: 4px; }
+.download-button { margin-top: 24px; max-width: 100%; }
+.start-inner .download-note { margin-top: 12px; font-size: 14px; color: #c2d6e1; }
+.support-download { margin: 0 0 32px; }
+.support-download p { font-size: 14px; line-height: 1.8; color: #b9d2d9; }
+.spec-panel dl > div { font-size: 14px; }
+.faq-grid p { font-size: 16px; }
+.release-status { font-size: 16px; }
+.news-strip p { font-size: 14px; }
+.news-strip time { font-size: 12px; }
+@media (max-width: 600px) {
+  .release-updates { padding-block: 48px; }
+  .update-grid { grid-template-columns: 1fr; }
+  .update-grid article { padding: 22px; }
+  .release-updates .section-title { align-items: start; }
+  .support-download .button { padding-inline: 12px; font-size: 14px; }
 }

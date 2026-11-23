@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { appRelease } from '@/lib/release';
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
@@ -63,9 +64,10 @@ export function SiteFooter() {
               <strong>SPARK</strong>
             </span>
           </Link>
-          <p>iPhone向け3Dソフトテニスゲーム</p>
+          <p>iPhone・iPad向け3Dソフトテニスゲーム</p>
         </div>
         <nav aria-label="フッターナビゲーション">
+          <a href={appRelease.storeUrl}>App Storeでダウンロード</a>
           <Link href="/privacy">プライバシーポリシー</Link>
           <Link href="/terms">利用規約</Link>
           <Link href="/support">サポート</Link>

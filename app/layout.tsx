@@ -19,14 +19,14 @@ export const metadata: Metadata = {
     template: '%s | SOFT TENNIS SPARK',
   },
   description:
-    'iPhoneゲーム「SOFT TENNIS SPARK」の公式情報、プライバシーポリシー、利用規約、サポート。',
+    'iPhone・iPad向け3Dソフトテニスゲーム「SOFT TENNIS SPARK」の公式サイト。App Storeで配信中。基本プレイ無料。ゲーム紹介、更新情報、サポート。',
   openGraph: {
     type: 'website',
     locale: 'ja_JP',
     siteName: 'SOFT TENNIS SPARK',
     title: 'SOFT TENNIS SPARK 公式サイト',
     description:
-      'iPhone向け3Dソフトテニスゲーム。練習・大会・通信対戦の紹介と配信情報。現在リリース準備中です。',
+      'iPhone・iPad向け3Dソフトテニスゲーム。App Storeで配信中。練習・大会・2人／4人の通信対戦を楽しめます。基本プレイ無料。',
     images: [
       {
         url: siteUrl + '/images/keyvisual.webp',

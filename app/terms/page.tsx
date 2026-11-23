@@ -20,7 +20,7 @@ export default function TermsPage() {
         />
         <article className="document-body">
           <p className="updated">
-            制定：2026年9月4日 ／ 最終更新：2026年11月1日
+            制定：2026年9月4日 ／ 最終更新：2026年11月23日
           </p>
 
           <section>
@@ -33,6 +33,7 @@ export default function TermsPage() {
 
           <section>
             <h2>2. 利用許諾</h2>
+            <p>App Storeから入手した本アプリの使用許諾には、<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noreferrer">Apple標準使用許諾契約（EULA）</a>が適用されます。あわせて、本ページのゲーム利用条件をご確認ください。</p>
             <p>
               運営者は、本規約を守ることを条件として、利用者が個人的かつ非商業的な目的で本アプリを利用するための、限定的、非独占的、譲渡不能な権利を許諾します。本アプリおよびそのコンテンツに関する知的財産権は、運営者または正当な権利者に帰属します。
             </p>

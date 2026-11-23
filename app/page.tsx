@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import { pageMetadata, siteUrl } from '@/lib/seo';
-import { ArrowDown, ArrowRight, ChevronRight } from 'lucide-react';
+import { appRelease } from '@/lib/release';
 import { SiteFooter, SiteHeader } from '@/components/site-chrome';
 import { GameGallery } from '@/components/game-gallery';
 
 export const metadata = pageMetadata(
   '',
   'SOFT TENNIS SPARK（ソフトテニススパーク）公式サイト',
-  'SOFT TENNIS SPARKはiPhone向けの3Dソフトテニスゲーム。フリック操作でショットを打ち分け、練習・大会・2人のシングルス・4人のダブルスを楽しめます。基本プレイ無料予定。現在リリース準備中です。',
+  'SOFT TENNIS SPARKはiPhone・iPad向けの3Dソフトテニスゲーム。フリック操作でショットを打ち分け、練習・大会・2人のシングルス・4人のダブルスを楽しめます。iPhone・iPad向けにApp Storeで配信中。基本プレイ無料。',
 );
 const base = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 export default function Home() {
@@ -25,10 +25,20 @@ export default function Home() {
             alternateName: 'ソフトテニススパーク',
             url: siteUrl + '/',
             description:
-              'iPhone向けの3Dソフトテニスゲーム。練習、大会、Game Centerによる2人・4人の通信対戦に対応。現在リリース準備中。',
-            inLanguage: 'ja',
+              'iPhone・iPad向けの3Dソフトテニスゲーム。練習、大会、Game Centerによる2人・4人の通信対戦に対応。App Storeで配信中。基本プレイ無料。',
+            inLanguage: ['ja', 'en'],
+            datePublished: appRelease.releasedAt,
+            sameAs: appRelease.storeUrl,
+            offers: {
+              '@type': 'Offer',
+              price: '0',
+              priceCurrency: 'JPY',
+              url: appRelease.storeUrl,
+              availability: 'https://schema.org/InStock',
+              description: '基本プレイ無料。広告・App内課金あり。',
+            },
             gamePlatform: 'iOS',
-            operatingSystem: 'iOS',
+            operatingSystem: 'iOS 16.4 / iPadOS 16.4以降',
             genre: ['スポーツ', 'ソフトテニス'],
             image: siteUrl + '/images/keyvisual.webp',
             playMode: [
@@ -64,7 +74,7 @@ export default function Home() {
       </section>
       <section className="hero-intro">
         <div>
-          <p className="eyebrow">iPhone向けソフトテニスゲーム</p>
+          <p className="eyebrow">iPhone・iPad向けソフトテニスゲーム</p>
           <h1>
             SOFT TENNIS <em>SPARK</em>
           </h1>
@@ -75,22 +85,21 @@ export default function Home() {
           </p>
         </div>
         <div className="release-status">
-          <span className="status-dot" /> iPhone向け・リリース準備中
-          <small>基本プレイ無料予定 / 広告・App内課金あり</small>
-          <a href="#game" className="button button-primary">
-            ゲーム紹介を見る <ArrowDown size={17} />
+          <strong>App Storeで配信中</strong>
+          <small>基本プレイ無料 / 広告・App内課金あり</small>
+          <a href={appRelease.storeUrl} className="button button-primary">
+            App Storeでダウンロード
           </a>
+          <a href="#game" className="intro-more">ゲーム紹介を見る</a>
         </div>
       </section>
       <div className="news-strip">
         <span>NEWS</span>
-        <time dateTime="2026-11-01">2026.11.01</time>
+        <time dateTime={appRelease.updatedAt}>2026.11.22</time>
         <p>
-          公式サイトをリニューアル。新しいビジュアルとゲーム情報を公開しました。
+          バージョン1.0.1を公開。友達とのペア参加、スタンプ、練習ランキングに対応しました。
         </p>
-        <a href="#screens" aria-label="ゲーム画面を見る">
-          <ArrowRight size={20} />
-        </a>
+        <a href="#updates">更新内容</a>
       </div>
       <section className="game-intro section-wrap" id="game">
         <div className="section-label">
@@ -137,7 +146,7 @@ export default function Home() {
               <span className="mode-index">01 / TRAINING</span>
               <h3>練習場</h3>
               <p>
-                サーブ・レシーブ・ストローク・ボレー・スマッシュ・ラリーの6種類から選べます。球種やコートなどの条件を設定して、練習したいショットに取り組めます。
+                サーブ・レシーブ・ストローク・ボレー・スマッシュ・ラリーの6種類から選べます。球種やコートなどの条件を設定して、練習したいショットに取り組めます。練習はハート消費なし。成功数・連続成功数のランキングにも挑戦できます。
               </p>
               <div className="mode-tags">
                 <span>6つの練習</span>
@@ -148,7 +157,7 @@ export default function Home() {
               <span className="mode-index">02 / TOURNAMENT</span>
               <h3>大会</h3>
               <p>
-                地区大会から世界大会まで、各地の大会で優勝を目指します。シングルスとダブルスで個性豊かなCPU選手と対戦し、自分の選手を育てていきます。
+                地区大会から全国・世界、そして天界大会へ。シングルスで個性豊かなCPU選手と対戦し、各大会の優勝を目指します。獲得したコインや育成の星で、選手やラケットを強化できます。
               </p>
               <div className="mode-tags">
                 <span>CPU対戦</span>
@@ -162,7 +171,7 @@ export default function Home() {
               <h3>通信対戦</h3>
               <p>
                 Game
-                Centerを使って対戦相手を探したり、友達を招待したりできます。シングルスは2人、ダブルスは4人で遊べます。ランダム対戦での勝利数を競うランキングもあります。
+                Centerを使って、2人のシングルス・4人のダブルスを楽しめます。友達とペアを組んで対戦相手を探したり、友達同士で再戦したりできます。試合の合間にはスタンプで挨拶できます。
               </p>
               <div className="mode-tags">
                 <span>2人 / 4人</span>
@@ -172,7 +181,7 @@ export default function Home() {
           </div>
           <p className="fine-print">
             通信対戦・ランキングにはインターネット接続とGame
-            Centerへのサインインが必要です。通信対戦は開発中のβ機能です。
+            Centerへのサインインが必要です。ダブルスの通信対戦には4人の参加者が必要です。通信対戦はβ版として提供しています。
           </p>
         </div>
       </section>
@@ -241,13 +250,13 @@ export default function Home() {
             <div>
               <dt>縦画面・横画面に対応</dt>
               <dd>
-                端末の向きに合わせて、縦画面と横画面が切り替わります。視点やショットボタンの位置・サイズは、縦横それぞれに設定できます。
+                iPhoneは縦画面・横画面、iPadは横画面で遊べます。iPhoneでは視点やショットボタンの位置・サイズを、縦横それぞれに設定できます。
               </dd>
             </div>
             <div>
               <dt>操作をカスタマイズ</dt>
               <dd>
-                ショットボタンの位置・サイズや視点設定を、縦横それぞれで調整できます。
+                フリック感度・コース感度、操作ボタンの左右入れ替え、フリック方向への球種の割り当てを調整できます。ゲーム内の表示は日本語・英語に対応しています。
               </dd>
             </div>
           </dl>
@@ -258,36 +267,51 @@ export default function Home() {
           </span>
           <figure>
             <img
-              src={`${base}/images/home.webp`}
+              src={`${base}/images/store-home.webp`}
               alt="選手の育成とプレイモードを選べる縦画面ホーム"
-              width="390"
-              height="794"
+              width="554"
+              height="1200"
               loading="lazy"
             />
             <figcaption>ホーム画面</figcaption>
           </figure>
           <figure>
             <img
-              src={`${base}/images/portrait.webp`}
-              alt="縦画面でプレイするストローク練習"
-              width="390"
-              height="844"
+              src={`${base}/images/store-portrait.webp`}
+              alt="iPhoneの縦画面でプレイするシングルスのサーブ"
+              width="554"
+              height="1200"
               loading="lazy"
             />
             <figcaption>縦画面プレイ</figcaption>
           </figure>
         </div>
       </section>
+      <section className="release-updates section-wrap" id="updates" aria-labelledby="updates-title">
+        <div className="section-title">
+          <div><p className="eyebrow">UPDATE</p><h2 id="updates-title">バージョン{appRelease.version}の更新内容</h2></div>
+          <p><time dateTime={appRelease.updatedAt}>2026年11月22日公開</time><br />App Storeからアップデートできます。</p>
+        </div>
+        <div className="update-grid">
+          <article><h3>友達とペアで通信対戦</h3><p>友達と一緒にダブルスの対戦相手を探せます。シングルス・ダブルスの「どちらでも」での募集や、友達との再戦にも対応しました。</p></article>
+          <article><h3>スタンプで挨拶</h3><p>対戦相手やペアに、スタンプで挨拶や声かけができます。試合終了後にも送り合えます。</p></article>
+          <article><h3>ハートを使わず練習</h3><p>練習はハート消費なしで遊べるようになりました。6種類の練習で、成功数と連続成功数の世界ランキングにも挑戦できます。</p></article>
+          <article><h3>操作とチュートリアルを改善</h3><p>コース感度の調整や操作ボタンの左右入れ替えに対応。チュートリアルの見本再生・タイミング案内と、オーバーサーブの打ちやすさも改善しました。</p></article>
+        </div>
+        <p className="fine-print">詳しい更新内容は<a href={appRelease.storeUrl}>App Storeのバージョン履歴</a>をご覧ください。</p>
+      </section>
       <section className="start-section" id="information">
         <div className="section-wrap start-inner">
           <div>
             <p className="eyebrow">RELEASE INFORMATION</p>
-            <h2>配信について</h2>
+            <h2>今すぐプレイ</h2>
             <p>
               SOFT TENNIS SPARK
               <br />
-              iPhone向け・リリース準備中
+              iPhone・iPad向けに配信中
             </p>
+            <a href={appRelease.storeUrl} className="button button-primary download-button">App Storeでダウンロード</a>
+            <p className="download-note">基本プレイ無料 / 広告・App内課金あり</p>
           </div>
           <div className="spec-panel">
             <h3>ゲーム情報</h3>
@@ -302,7 +326,7 @@ export default function Home() {
               </div>
               <div>
                 <dt>対応端末</dt>
-                <dd>iPhone</dd>
+                <dd>iPhone / iPad</dd>
               </div>
               <div>
                 <dt>プレイ人数</dt>
@@ -311,28 +335,36 @@ export default function Home() {
               <div>
                 <dt>料金</dt>
                 <dd>
-                  基本プレイ無料予定
+                  基本プレイ無料
                   <br />
                   <small>広告・App内課金あり</small>
                 </dd>
               </div>
               <div>
-                <dt>配信時期</dt>
-                <dd>決まり次第、本サイトでお知らせします</dd>
+                <dt>配信開始</dt>
+                <dd><time dateTime={appRelease.releasedAt}>2026年11月15日</time></dd>
+              </div>
+              <div>
+                <dt>対応OS</dt>
+                <dd>{appRelease.minimumOS}</dd>
+              </div>
+              <div>
+                <dt>対応言語</dt>
+                <dd>日本語 / 英語</dd>
               </div>
             </dl>
             <Link href="/support" className="spec-support">
-              遊び方・よくある質問 <ChevronRight size={18} />
+              遊び方・よくある質問
             </Link>
           </div>
         </div>
       </section>
       <section className="final-notes section-wrap">
         <p>
-          掲載画像は開発中のものです。内容・仕様は変更される場合があります。キービジュアルはイメージです。
+          掲載画面には以前のバージョンや開発中のものを含みます。現在のアプリとは表示が異なる場合があります。キービジュアルはイメージです。
         </p>
         <Link href="/support">
-          プレイヤーサポート <ArrowRight size={16} />
+          プレイヤーサポート
         </Link>
       </section>
       <SiteFooter />
